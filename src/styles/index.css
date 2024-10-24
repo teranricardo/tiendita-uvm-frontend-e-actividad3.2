@@ -12,3 +12,19 @@
   font-weight: normal;
   font-style: normal;
 }
+
+.parallax1,
+.parallax2 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax1 {
+  background-image: url('/images/fondo_1.jpg');
+}
+
+.parallax2 {
+  background-image: url('/images/fondo_2.jpg');
+}
