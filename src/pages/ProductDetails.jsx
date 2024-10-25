@@ -2,15 +2,22 @@
 
 import React from 'react';
 import { useLocation, NavLink } from 'react-router-dom';
+import { motion } from "framer-motion";
 
 export default function ProductDetails() {
   const location = useLocation();
   const product = location.state; // Obtiene los datos del producto de la navegación
 
   return (
-    <div className="font-rabbits">
-      <main className="py-16 bg-grayLight">
-        <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md overflow-hidden p-8">
+    <div
+
+      className="font-rabbits">
+      <main className="py-16 bg-grayLight p-4">
+        <motion.div
+          initial={{ x: -300 }} // El componente empieza 300px a la izquierda
+          animate={{ x: 0 }}    // El componente se mueve a su posición original
+          transition={{ duration: 1 }} // La animación dura 1 segundo
+          className="max-w-4xl mx-auto bg-white rounded-lg shadow-md overflow-hidden p-8">
           <div className="flex flex-col md:flex-row items-center md:space-x-8">
             {/* Imagen del producto */}
             <img src={product.image} alt={product.name} className="w-full md:w-1/2 h-96 object-cover rounded-lg transform transition duration-300 ease-in-out hover:scale-110" />
@@ -31,7 +38,7 @@ export default function ProductDetails() {
               </NavLink>
             </div>
           </div>
-        </div>
+        </motion.div>
       </main>
     </div>
   );
